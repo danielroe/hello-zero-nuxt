@@ -13,7 +13,7 @@ export default defineNuxtPlugin(() => {
   const z = new Zero({
     userID,
     auth: () => encodedJWT.value || undefined,
-    server: config.public.zero.server,
+    server: import.meta.client ? config.public.zero.server : undefined,
     schema,
     // This is often easier to develop with if you're frequently changing
     // the schema. Switch to 'idb' for local-persistence.
