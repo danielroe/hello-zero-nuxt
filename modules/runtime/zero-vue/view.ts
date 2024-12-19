@@ -2,8 +2,7 @@
 
 import { applyChange } from '@rocicorp/zero/advanced'
 import type { Change, Entry, Format, Input, Output, Query, QueryType, Smash, TableSchema, View } from '@rocicorp/zero/advanced'
-import { ref } from 'vue'
-import type { Ref } from 'vue'
+import { reactive } from 'vue'
 
 export class VueView<V extends View> implements Output {
   readonly #input: Input
@@ -12,7 +11,7 @@ export class VueView<V extends View> implements Output {
 
   // Synthetic "root" entry that has a single "" relationship, so that we can
   // treat all changes, including the root change, generically.
-  readonly #root: Ref<Entry>
+  readonly #root: Entry
 
   constructor(
     input: Input,
@@ -22,14 +21,14 @@ export class VueView<V extends View> implements Output {
     this.#input = input
     this.#format = format
     this.#onDestroy = onDestroy
-    this.#root = ref({
+    this.#root = reactive({
       '': format.singular ? undefined : [],
     })
     input.setOutput(this)
 
     for (const node of input.fetch({})) {
       applyChange(
-        this.#root.value,
+        this.#root,
         { type: 'add', node },
         input.getSchema(),
         '',
@@ -39,7 +38,7 @@ export class VueView<V extends View> implements Output {
   }
 
   get data() {
-    return this.#root.value[''] as V
+    return this.#root[''] as V
   }
 
   destroy() {
@@ -48,7 +47,7 @@ export class VueView<V extends View> implements Output {
 
   push(change: Change): void {
     applyChange(
-      this.#root.value,
+      this.#root,
       change,
       this.#input.getSchema(),
       '',
