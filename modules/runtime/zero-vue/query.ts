@@ -1,6 +1,8 @@
 // based on https://github.com/rocicorp/mono/tree/main/packages/zero-solid
 
 import type { Query, AdvancedQuery, QueryType, Smash, TableSchema } from '@rocicorp/zero/advanced'
+import { toValue, shallowRef, watch, computed, onUnmounted, isRef } from 'vue'
+import type { ComputedRef, MaybeRefOrGetter } from 'vue'
 
 import { vueViewFactory } from './view'
 

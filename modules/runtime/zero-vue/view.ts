@@ -2,6 +2,8 @@
 
 import { applyChange } from '@rocicorp/zero/advanced'
 import type { Change, Entry, Format, Input, Output, Query, QueryType, Smash, TableSchema, View } from '@rocicorp/zero/advanced'
+import { ref } from 'vue'
+import type { Ref } from 'vue'
 
 export class VueView<V extends View> implements Output {
   readonly #input: Input
