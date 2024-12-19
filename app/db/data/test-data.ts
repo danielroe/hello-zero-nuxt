@@ -20,7 +20,7 @@ const replies = [
   'I could send you a tarball, but it won\'t work',
 ]
 
-export function randomMessage(users: User[], mediums: Medium[]): Message {
+export function randomMessage(users: readonly User[], mediums: readonly Medium[]): Message {
   const id = randID()
   const mediumID = mediums[randInt(mediums.length)]!.id
   const timestamp = randBetween(1727395200000, new Date().getTime())
