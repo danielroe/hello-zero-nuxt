@@ -13,7 +13,7 @@ const filterUser = ref('')
 const filterText = ref('')
 const action = ref<'add' | 'remove' | undefined>(undefined)
 
-const filtered = computed(() => {
+const filteredMessages = useQuery(() => {
   let filtered = z.query.message
     .related('medium', medium => medium.one())
     .related('sender', sender => sender.one())
@@ -29,8 +29,6 @@ const filtered = computed(() => {
 
   return filtered
 })
-
-const filteredMessages = useQuery(filtered)
 
 const hasFilters = computed(() => filterUser.value || filterText.value)
 
