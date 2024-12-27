@@ -11,7 +11,7 @@ export default defineNuxtConfig({
   css: ['~/assets/index.css'],
   runtimeConfig: {
     zero: {
-      jwtSecret: process.env.ZERO_JWT_SECRET || '',
+      jwtSecret: process.env.ZERO_AUTH_SECRET || '',
     },
     public: {
       zero: {
