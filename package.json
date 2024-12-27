@@ -33,7 +33,7 @@
     "lint-staged": "15.2.11",
     "simple-git-hooks": "2.11.1",
     "typescript": "5.7.2",
-    "vue-tsc": "2.1.10"
+    "vue-tsc": "2.2.0"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
@@ -43,5 +43,5 @@
       "npx eslint --fix"
     ]
   },
-  "packageManager": "pnpm@9.15.0"
+  "packageManager": "pnpm@9.15.1"
 }
