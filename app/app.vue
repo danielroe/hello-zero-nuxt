@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { escapeLike } from '@rocicorp/zero'
+import { useQuery } from 'zero-vue'
 
 import { randomMessage } from '~/db/data/test-data'
 
