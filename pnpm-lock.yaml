@@ -15,8 +15,8 @@ importers:
         specifier: ^0.10.3
         version: 0.10.3(db0@0.2.3)(ioredis@5.5.0)(magicast@0.3.5)(vite@6.1.0(@types/node@22.13.1)(jiti@2.4.2)(terser@5.38.1)(tsx@4.19.2)(yaml@2.7.0))
       '@rocicorp/zero':
-        specifier: ^0.10.0
-        version: 0.10.2025011400
+        specifier: ^0.14.0
+        version: 0.14.2025021202
       jose:
         specifier: ^5.9.6
         version: 5.9.6
@@ -24,15 +24,15 @@ importers:
         specifier: ^3.14.1592
         version: 3.15.4(@parcel/watcher@2.5.1)(@types/node@22.13.1)(db0@0.2.3)(eslint@9.20.0(jiti@2.4.2))(ioredis@5.5.0)(magicast@0.3.5)(optionator@0.9.4)(rollup@4.34.6)(terser@5.38.1)(tsx@4.19.2)(typescript@5.7.3)(vite@6.1.0(@types/node@22.13.1)(jiti@2.4.2)(terser@5.38.1)(tsx@4.19.2)(yaml@2.7.0))(vue-tsc@2.2.0(typescript@5.7.3))(yaml@2.7.0)
       zero-vue:
-        specifier: ^0.0.1
-        version: 0.0.1(vue@3.5.13(typescript@5.7.3))
+        specifier: ^0.1.0
+        version: 0.1.0(vue@3.5.13(typescript@5.7.3))
     devDependencies:
       eslint:
         specifier: 9.20.0
         version: 9.20.0(jiti@2.4.2)
       lint-staged:
-        specifier: 15.3.0
-        version: 15.3.0
+        specifier: 15.4.3
+        version: 15.4.3
       simple-git-hooks:
         specifier: 2.11.1
         version: 2.11.1
@@ -1133,8 +1133,8 @@ packages:
     resolution: {integrity: sha512-bm+VUdF4CnKVjUj/dSCmVu0hjcyXaF/nKkw2rNhZUjGeBOMRy/hh8z/32h311es4dxCVvcZ3+QHQHMxF2YG5Kw==}
     hasBin: true
 
-  '@rocicorp/zero@0.10.2025011400':
-    resolution: {integrity: sha512-9c+AaHJWZKbmo/n2hQ/GI7uf8NxnLfv/Dk/O3UvUHTvVQN6YyJVUBMeF+x8bdeVMnLCSMvGz5nyOBGn1cEr7ag==}
+  '@rocicorp/zero@0.14.2025021202':
+    resolution: {integrity: sha512-QT2Lj4Q4IXeLlN8z4CnpQJPsDV8XFQq6HXC73/gAvGVwSMYNZSaAscjnI3DNAbznihtSc20Z8fB8jxelt7jaWA==}
     engines: {node: '>=20'}
     hasBin: true
 
@@ -1852,8 +1852,8 @@ packages:
     resolution: {integrity: sha512-PqMLy5+YGwhMh1wS04mVG44oqDsgyLRSKJBdOo1bnYhMKBW65gZF1dRp2OZRhiTjgUHljy99qkO7bsctLaw35Q==}
     engines: {node: '>=12.20.0'}
 
-  commander@12.1.0:
-    resolution: {integrity: sha512-Vw8qHK3bZM9y/P10u3Vib8o/DdkvA2OtPtZvD871QKjy74Wj1WSKFILMPRPSdUSx5RFK1arlJzEtA4PkFgnbuA==}
+  commander@13.1.0:
+    resolution: {integrity: sha512-/rFeCpNJQbhSZjGVwO9RFV3xPqbnERS8MmIQzCtD/zl6gpJuV/bMLuN92oG3F7d8oDEHHRrujSXNUr8fpjntKw==}
     engines: {node: '>=18'}
 
   commander@2.20.3:
@@ -2933,8 +2933,8 @@ packages:
   lines-and-columns@1.2.4:
     resolution: {integrity: sha512-7ylylesZQ/PV29jhEDl3Ufjo6ZX7gCqJr5F7PKrqc93v7fzSymt1BpwEU8nAUXs8qzzvqhbjhK5QZg6Mt/HkBg==}
 
-  lint-staged@15.3.0:
-    resolution: {integrity: sha512-vHFahytLoF2enJklgtOtCtIjZrKD/LoxlaUusd5nh7dWv/dkKQJY74ndFSzxCdv7g0ueGg1ORgTSt4Y9LPZn9A==}
+  lint-staged@15.4.3:
+    resolution: {integrity: sha512-FoH1vOeouNh1pw+90S+cnuoFwRfUD9ijY2GKy5h7HS3OR7JVir2N2xrsa0+Twc1B7cW72L+88geG5cW4wIhn7g==}
     engines: {node: '>=18.12.0'}
     hasBin: true
 
@@ -4673,11 +4673,6 @@ packages:
   yaml-ast-parser@0.0.43:
     resolution: {integrity: sha512-2PTINUwsRqSd+s8XxKaJWQlUuEMHJQyEuh2edBbW8KNJz0SJPwUSD2zRWqezFEdN7IzAgeuYHFUCF7o8zRdZ0A==}
 
-  yaml@2.6.1:
-    resolution: {integrity: sha512-7r0XPzioN/Q9kXBro/XPnA6kznR73DHq+GXh5ON7ZozRO6aMjbmiBuKste2wslTFkC5d1dw0GooOCepZXJ2SAg==}
-    engines: {node: '>= 14'}
-    hasBin: true
-
   yaml@2.7.0:
     resolution: {integrity: sha512-+hSoy/QHluxmC9kCIJyL/uyFmLmc+e5CFR5Wa+bpIhIj85LVb9ZH2nVnqrHoSvKogwODv0ClqZkmiSSaIH5LTA==}
     engines: {node: '>= 14'}
@@ -4699,8 +4694,8 @@ packages:
     resolution: {integrity: sha512-b4JR1PFR10y1mKjhHY9LaGo6tmrgjit7hxVIeAmyMw3jegXR4dhYqLaQF5zMXZxY7tLpMyJeLjr1C4rLmkVe8g==}
     engines: {node: '>=12.20'}
 
-  zero-vue@0.0.1:
-    resolution: {integrity: sha512-38E0ljfS8b1mVCYHAcPYqCICbt8Of9U3wYrgBx3iKZJFUVuA79/QuGASkP0KUEVhG0NrqIiZTQA4Shcd9H35mA==}
+  zero-vue@0.1.0:
+    resolution: {integrity: sha512-mqFkKdM8eYJpmM+fX68LA034Ci8uhmsUZ0uvcxYYn5OtJz4WgypYSLAytgQ8wf1b/6slCnutwEZ2dxHoR0sU+g==}
     engines: {node: '>=20.0.0'}
     peerDependencies:
       vue: ^3.5.13
@@ -6030,7 +6025,7 @@ snapshots:
       bindings: 1.5.0
       prebuild-install: 7.1.3
 
-  '@rocicorp/zero@0.10.2025011400':
+  '@rocicorp/zero@0.14.2025021202':
     dependencies:
       '@badrap/valita': 0.3.11
       '@databases/escape-identifier': 1.0.3
@@ -6866,7 +6861,7 @@ snapshots:
       table-layout: 4.1.1
       typical: 7.3.0
 
-  commander@12.1.0: {}
+  commander@13.1.0: {}
 
   commander@2.20.3: {}
 
@@ -8008,10 +8003,10 @@ snapshots:
 
   lines-and-columns@1.2.4: {}
 
-  lint-staged@15.3.0:
+  lint-staged@15.4.3:
     dependencies:
       chalk: 5.4.1
-      commander: 12.1.0
+      commander: 13.1.0
       debug: 4.4.0(supports-color@9.4.0)
       execa: 8.0.1
       lilconfig: 3.1.3
@@ -8019,7 +8014,7 @@ snapshots:
       micromatch: 4.0.8
       pidtree: 0.6.0
       string-argv: 0.3.2
-      yaml: 2.6.1
+      yaml: 2.7.0
     transitivePeerDependencies:
       - supports-color
 
@@ -9958,8 +9953,6 @@ snapshots:
 
   yaml-ast-parser@0.0.43: {}
 
-  yaml@2.6.1: {}
-
   yaml@2.7.0: {}
 
   yargs-parser@21.1.1: {}
@@ -9978,9 +9971,9 @@ snapshots:
 
   yocto-queue@1.1.1: {}
 
-  zero-vue@0.0.1(vue@3.5.13(typescript@5.7.3)):
+  zero-vue@0.1.0(vue@3.5.13(typescript@5.7.3)):
     dependencies:
-      '@rocicorp/zero': 0.10.2025011400
+      '@rocicorp/zero': 0.14.2025021202
       vue: 3.5.13(typescript@5.7.3)
     transitivePeerDependencies:
       - '@75lb/nature'
