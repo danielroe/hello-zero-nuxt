@@ -23,18 +23,18 @@
   },
   "dependencies": {
     "@nuxt/eslint": "^1.0.0",
-    "@nuxt/fonts": "^0.10.3",
-    "@rocicorp/zero": "^0.10.0",
+    "@nuxt/fonts": "^0.11.0",
+    "@rocicorp/zero": "^0.18.0",
     "jose": "^6.0.0",
     "nuxt": "^3.14.1592",
-    "zero-vue": "^0.0.1"
+    "zero-vue": "^0.2.0"
   },
   "devDependencies": {
     "eslint": "9.25.1",
-    "lint-staged": "15.3.0",
-    "simple-git-hooks": "2.11.1",
-    "typescript": "5.7.3",
-    "vue-tsc": "2.2.0"
+    "lint-staged": "15.5.1",
+    "simple-git-hooks": "2.13.0",
+    "typescript": "5.8.3",
+    "vue-tsc": "2.2.10"
   },
   "simple-git-hooks": {
     "pre-commit": "npx lint-staged"
@@ -44,5 +44,5 @@
       "npx eslint --fix"
     ]
   },
-  "packageManager": "pnpm@10.2.1"
+  "packageManager": "pnpm@10.10.0"
 }
