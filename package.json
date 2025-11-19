@@ -26,7 +26,7 @@
     "@nuxt/fonts": "^0.11.0",
     "@rocicorp/zero": "^0.18.0",
     "jose": "^6.0.0",
-    "nuxt": "^3.14.1592",
+    "nuxt": "^4.0.0",
     "zero-vue": "^0.2.0"
   },
   "devDependencies": {
