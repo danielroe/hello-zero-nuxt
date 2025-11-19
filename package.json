@@ -31,7 +31,7 @@
   },
   "devDependencies": {
     "eslint": "9.25.1",
-    "lint-staged": "15.5.1",
+    "lint-staged": "16.2.7",
     "simple-git-hooks": "2.13.0",
     "typescript": "5.8.3",
     "vue-tsc": "2.2.10"
