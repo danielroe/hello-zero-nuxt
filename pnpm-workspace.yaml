@@ -1,0 +1,7 @@
+allowBuilds:
+  "@parcel/watcher": false
+  "@rocicorp/zero-sqlite3": true
+  esbuild: false
+  protobufjs: true
+  simple-git-hooks: true
+  unrs-resolver: false
