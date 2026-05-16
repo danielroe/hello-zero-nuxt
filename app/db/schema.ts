@@ -2,67 +2,60 @@
 // They must be equal to or a subset of the server-side schema.
 // Note the "relationships" field, which defines first-class
 // relationships between tables.
-// See https://github.com/rocicorp/mono/blob/main/apps/zbugs/src/domain/schema.ts
+// See https://github.com/rocicorp/mono/blob/main/apps/zbugs/shared/schema.ts
 // for more complex examples, including many-to-many.
 
-import type { ExpressionBuilder, TableSchema, Row } from '@rocicorp/zero'
-import { createSchema, createTableSchema, definePermissions, NOBODY_CAN, ANYONE_CAN } from '@rocicorp/zero'
+import type { ExpressionBuilder, Row } from '@rocicorp/zero'
+import { ANYONE_CAN, boolean, createSchema, definePermissions, NOBODY_CAN, number, relationships, string, table } from '@rocicorp/zero'
 
-const userSchema = createTableSchema({
-  tableName: 'user',
-  columns: {
-    id: 'string',
-    name: 'string',
-    partner: 'boolean',
-  },
-  primaryKey: 'id',
-})
+const user = table('user')
+  .columns({
+    id: string(),
+    name: string(),
+    partner: boolean(),
+  })
+  .primaryKey('id')
 
-const mediumSchema = createTableSchema({
-  tableName: 'medium',
-  columns: {
-    id: 'string',
-    name: 'string',
-  },
-  primaryKey: 'id',
-})
+const medium = table('medium')
+  .columns({
+    id: string(),
+    name: string(),
+  })
+  .primaryKey('id')
 
-const messageSchema = createTableSchema({
-  tableName: 'message',
-  columns: {
-    id: 'string',
-    senderID: 'string',
-    mediumID: 'string',
-    body: 'string',
-    timestamp: 'number',
-  },
-  primaryKey: 'id',
-  relationships: {
-    sender: {
-      sourceField: 'senderID',
-      destSchema: userSchema,
-      destField: 'id',
-    },
-    medium: {
-      sourceField: 'mediumID',
-      destSchema: mediumSchema,
-      destField: 'id',
-    },
-  },
-})
+const message = table('message')
+  .columns({
+    id: string(),
+    senderID: string(),
+    mediumID: string(),
+    body: string(),
+    timestamp: number(),
+  })
+  .primaryKey('id')
+
+const messageRelationships = relationships(message, ({ one }) => ({
+  sender: one({
+    sourceField: ['senderID'],
+    destField: ['id'],
+    destSchema: user,
+  }),
+  medium: one({
+    sourceField: ['mediumID'],
+    destField: ['id'],
+    destSchema: medium,
+  }),
+}))
 
 export const schema = createSchema({
-  version: 1,
-  tables: {
-    user: userSchema,
-    medium: mediumSchema,
-    message: messageSchema,
-  },
+  tables: [user, medium, message],
+  relationships: [messageRelationships],
+  enableLegacyQueries: true,
+  enableLegacyMutators: true,
 })
 
 export type Schema = typeof schema
-export type Message = Row<typeof messageSchema>
-export type Medium = Row<typeof mediumSchema>
+export type Message = Row<typeof schema.tables.message>
+export type Medium = Row<typeof schema.tables.medium>
 export type User = Row<typeof schema.tables.user>
 
 // The contents of your decoded JWT.
@@ -73,12 +66,12 @@ type AuthData = {
 export const permissions = definePermissions<AuthData, Schema>(schema, () => {
   const allowIfLoggedIn = (
     authData: AuthData,
-    { cmpLit }: ExpressionBuilder<TableSchema>,
+    { cmpLit }: ExpressionBuilder<'message', Schema>,
   ) => cmpLit(authData.sub, 'IS NOT', null)
 
   const allowIfMessageSender = (
     authData: AuthData,
-    { cmp }: ExpressionBuilder<typeof messageSchema>,
+    { cmp }: ExpressionBuilder<'message', Schema>,
   ) => cmp('senderID', '=', authData.sub ?? '')
 
   return {

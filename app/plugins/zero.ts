@@ -12,7 +12,7 @@ export default defineNuxtPlugin(() => {
 
   const z = new Zero({
     userID,
-    auth: () => encodedJWT.value || undefined,
+    auth: encodedJWT.value || undefined,
     server: import.meta.client ? config.public.zero.server : undefined,
     schema,
     // This is often easier to develop with if you're frequently changing

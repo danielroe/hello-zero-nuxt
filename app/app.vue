@@ -6,18 +6,18 @@ import { randomMessage } from '~/db/data/test-data'
 
 const z = useZero()
 
-const users = useQuery(z.query.user)
-const mediums = useQuery(z.query.medium)
-const allMessages = useQuery(z.query.message)
+const { data: users } = useQuery(z, z.query.user)
+const { data: mediums } = useQuery(z, z.query.medium)
+const { data: allMessages } = useQuery(z, z.query.message)
 
 const filterUser = ref('')
 const filterText = ref('')
 const action = ref<'add' | 'remove' | undefined>(undefined)
 
-const filteredMessages = useQuery(() => {
+const { data: filteredMessages } = useQuery(z, () => {
   let filtered = z.query.message
-    .related('medium', medium => medium.one())
-    .related('sender', sender => sender.one())
+    .related('medium')
+    .related('sender')
     .orderBy('timestamp', 'desc')
 
   if (filterUser.value) {
