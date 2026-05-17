@@ -30,7 +30,7 @@
     "zero-vue": "^0.7.0"
   },
   "devDependencies": {
-    "eslint": "9.25.1",
+    "eslint": "10.4.0",
     "nano-staged": "0.9.0",
     "simple-git-hooks": "2.13.1",
     "typescript": "5.9.3",
